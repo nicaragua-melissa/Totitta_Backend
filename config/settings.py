@@ -14,7 +14,8 @@ from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
@@ -38,7 +39,15 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core",
-    "rest_framework"
+    "rest_framework",
+    'drf_yasg',
+    'rest_framework_simplejwt',
+    
+    'Apps.Catalogo.Guia',
+    'Apps.Catalogo.Persona',
+    'Apps.Catalogo.Reserva',
+    'Apps.Catalogo.Certificacion',
+    'Seguridad.Usuario',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +84,19 @@ WSGI_APPLICATION = "config.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
-    }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+    'default': {
+            'ENGINE': 'mssql',
+            'NAME': 'EduOptima',
+            'host': 'EVELING',
+            'OPTIONS':{
+                'driver': 'ODBC Driver 17 for SQL Server',
+                'trusted_connection':'yes'
+            },
+    },
 }
 
 
@@ -122,3 +140,4 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+AUTH_USER_MODEL = 'Usuario.Usuario'
