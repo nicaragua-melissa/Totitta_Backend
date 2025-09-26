@@ -1,8 +1,8 @@
 """
-URL configuration for config project.
+URL configuration for Config project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/5.2/topics/http/urls/
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -14,7 +14,6 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-
 from django.contrib import admin
 from django.urls import path, include
 from drf_yasg import openapi
@@ -24,6 +23,10 @@ from Apps.Catalogo.Certificacion.API.urls import routerCertificacion
 from Apps.Catalogo.Guia.API.urls import routerGuia
 from Apps.Catalogo.Persona.API.urls import routerPersona
 from Apps.Catalogo.Reserva.API.urls import routerReserva
+from Apps.Movimientos.Actividad.API.urls import routerActividad
+from Apps.Movimientos.Guia_Sertificacion.API.urls import routerGC
+from Apps.Movimientos.Reservacion.API.urls import routerReservacion
+from Apps.Movimientos.Reseña.API.urls import routerResenia
 from Seguridad.Usuario.Api.UsuariosApi import UserCreateView
 
 schema_view = get_schema_view(
@@ -39,10 +42,16 @@ schema_view = get_schema_view(
 )
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
+    path('admin/', admin.site.urls),
     path('api/v1/register/', UserCreateView.as_view(), name='register'),
     path('api/Certificacion', include(routerCertificacion.urls)),
     path('api/Guia',include(routerGuia.urls)),
     path('api/Persona',include(routerPersona.urls)),
     path('api/Reserva',include(routerReserva.urls)),
+    path('api/Actividad',include(routerActividad.urls)),
+    path('api/Reservacion', include(routerReservacion.urls)),
+    path('api/Resenia',include(routerResenia.urls)),
+    path('api/GuiasCertificados',include(routerGC.urls)),
+    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 ]
