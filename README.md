@@ -1,6 +1,6 @@
-# Totitta Backend
+# Tōtitta Backend
 
-Es el proyecto backend que gestiona la lógica del servidor, la base de datos y exposición de Apis, del sistema web Totitta.
+Es el proyecto backend que gestiona la lógica del servidor, la base de datos y exposición de Apis, del sistema web Tōtitta.
 Permite a los usuarios explorar reservas naturales, guías certificados, actividades accesibles, catálogos de aves 
 y realizar reservas seguras desde cualquier dispositivo, promoviendo el turismo sostenible en Nicaragua.
 
