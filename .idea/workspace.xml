@@ -4,55 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d46988c-a6d0-4e85-9a9f-57501b2d8b5a" name="Changes" comment="Estructura inicial del proyecto">
+    <list default="true" id="8d46988c-a6d0-4e85-9a9f-57501b2d8b5a" name="Changes" comment="Apis y cambios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Certificacion/API/CertificacionsAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Certificacion/API/CertificacionsAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Certificacion/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Certificacion/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Certificacion/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/API/GuiasAPI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/API/SerializerGuias.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/API/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/API/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Guia/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Persona/API/PersonaAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Persona/API/PersonaAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Persona/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Persona/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Persona/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Reserva/API/ReservaAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Reserva/API/ReservaAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Reserva/API/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Catalogo/Reserva/API/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Catalogo/Reserva/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Actividad/API/ActividadAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Actividad/API/ActividadAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Actividad/API/SerializerActividad.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Actividad/API/SerializerActividad.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Actividad/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Actividad/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Actividad/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/API/GCAPI.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/API/SerializerGC.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/API/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/API/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/apps.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/migrations/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/models.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/tests.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Guia_Sertificacion/views.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reservacion/API/ReservacionAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Reservacion/API/ReservacionAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reservacion/API/SerializerReservacion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Reservacion/API/SerializerReservacion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reservacion/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reseña/API/ReseñaAPI.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Reseña/API/ReseñaAPI.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reseña/API/SerializerReseña.py" beforeDir="false" afterPath="$PROJECT_DIR$/Apps/Movimientos/Reseña/API/SerializerReseña.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Apps/Movimientos/Reseña/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Seguridad/Usuario/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +25,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;nicaragua-melissa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/nicaragua-melissa/Totitta_Backend.git&quot;,
+    &quot;accountId&quot;: &quot;f9ccb126-a3c8-4f9e-8ad7-0f9888effc78&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/apps/catalogos/Actividad/models.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/apps/catalogos/Certificacion/models.py" root0="SKIP_INSPECTION" />
@@ -86,19 +53,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/GATEWAY/Hackathon/Totitta_Backend/Apps/Movimientos",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/GATEWAY/Hackathon/Totitta_Backend/Apps/Movimientos&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\GATEWAY\Hackathon\Totitta_Backend\Apps\Movimientos" />
@@ -203,7 +170,8 @@
       <workItem from="1758917495890" duration="13579000" />
       <workItem from="1758949123674" duration="2372000" />
       <workItem from="1759011626460" duration="598000" />
-      <workItem from="1759033074913" duration="7648000" />
+      <workItem from="1759033074913" duration="9124000" />
+      <workItem from="1759092112563" duration="5259000" />
     </task>
     <task id="LOCAL-00001" summary="Estructura inicial del proyecto">
       <option name="closed" value="true" />
@@ -213,7 +181,15 @@
       <option name="project" value="LOCAL" />
       <updated>1756942388760</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Apis y cambios">
+      <option name="closed" value="true" />
+      <created>1759043540115</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1759043540117</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -244,6 +220,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Estructura inicial del proyecto" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estructura inicial del proyecto" />
+    <MESSAGE value="Apis y cambios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Apis y cambios" />
   </component>
 </project>
