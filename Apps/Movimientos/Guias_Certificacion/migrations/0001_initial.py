@@ -9,12 +9,13 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ("Reserva", "0001_initial"),
+        ("Guias", "0001_initial"),
+        ("Certificacion", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name="Resenia",
+            name="Guia_Certificacion",
             fields=[
                 (
                     "id",
@@ -25,19 +26,22 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("comentario", models.TextField()),
-                ("Calificacion", models.IntegerField()),
-                ("fecha_comentario", models.DateField()),
                 (
-                    "Id_Reserva",
+                    "Id_Certificacion",
                     models.ForeignKey(
                         on_delete=django.db.models.deletion.CASCADE,
-                        to="Reserva.reserva",
+                        to="Certificacion.certificacion",
+                    ),
+                ),
+                (
+                    "Id_Guia",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="Guias.guia"
                     ),
                 ),
             ],
             options={
-                "db_table": "Resenia",
+                "db_table": "Guia_Certificacion",
             },
         ),
     ]

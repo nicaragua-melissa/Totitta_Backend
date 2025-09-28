@@ -8,11 +8,11 @@ from Apps.Utils.ResponseData import ResponseData
 
 
 class ReservacionViewSet(ModelViewSet):
-    queryset = Reservacion.objects.select_related('Reserva')
+    queryset = Reservacion.objects.select_related('Id_Reserva')
     serializer_class = ReservacionSerializer
 
     def list(self, request):
-        queryset = Reservacion.objects.select_related('Reserva').all()
+        queryset = Reservacion.objects.select_related('Id_Reserva', 'Id_Persona').all()
         serializer = ReservacionSerializer(queryset, many=True)
         data = ResponseData(
             Success=True,
@@ -48,7 +48,7 @@ class ReservacionViewSet(ModelViewSet):
         serializer = ReservacionSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        code = Reservacion.objects.filter(code=serializer.validated_data['Codigo_Reserva']).exists()
+        code = Reservacion.objects.filter(Codigo_Reserva=serializer.validated_data['Codigo_Reserva']).exists()
         if code:
             data = ResponseData(
                 Success=False,
@@ -67,10 +67,11 @@ class ReservacionViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk=int):
+    def update(self, request, pk=int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             loans = Reservacion.objects.get(pk=pk)
-            serializer = ReservacionSerializer(loans, data=request.data)
+            serializer = ReservacionSerializer(loans, data=request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

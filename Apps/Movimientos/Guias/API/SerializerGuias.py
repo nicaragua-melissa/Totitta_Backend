@@ -1,12 +1,12 @@
 from rest_framework.serializers import ModelSerializer
 
+from Apps.Movimientos.Guias.models import Guia
 from Apps.Movimientos.Reservacion.API.SerializerReservacion import ReservacionSerializer
-from Apps.Movimientos.Reseña.models import Resenia
 
 
-class ReseniaSerializer(ModelSerializer):
+class GuiasSerializer(ModelSerializer):
     IdReserva = ReservacionSerializer(read_only=True)
 
     class Meta:
-        model = Resenia
+        model = Guia
         fields = '__all__'

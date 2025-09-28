@@ -2,18 +2,18 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from Apps.Catalogo.Guia.API.SerializerGuias import GuiasSerializer
-from Apps.Catalogo.Guia.models import Guia
+from Apps.Movimientos.Guias.API.SerializerGuias import GuiasSerializer
+from Apps.Movimientos.Guias.models import Guia
 from Apps.Utils.ResponseData import ResponseData
 
 
 class GuiasViewSet(ModelViewSet):
-    queryset = Guia.objects.all()
+    queryset = Guia.objects.select_related('IdReserva')
     serializer_class = GuiasSerializer
 
     def list(self, request):
         #Filtra solo guías activos
-        filtro = Guia.objects.filter(is_Active=True)
+        filtro = Guia.objects.select_related('Reserva').all()
         serializer = GuiasSerializer(filtro, many=True)
 
         data = ResponseData(
@@ -49,7 +49,7 @@ class GuiasViewSet(ModelViewSet):
     def create(self, request):
         serializer = GuiasSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        Cedu = Guia.objects.filter(Cedu=serializer.validated_data['cedula']).exists()
+        Cedu = Guia.objects.filter(cedula=serializer.validated_data['cedula']).exists()
 
         if Cedu:
             data = ResponseData(
@@ -70,10 +70,11 @@ class GuiasViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk= int):
+    def update(self, request, pk= int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             person = Guia.objects.get(pk=pk)
-            serializer = GuiasSerializer(instance=person, data= request.data)
+            serializer = GuiasSerializer(instance=person, data= request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

@@ -8,11 +8,11 @@ from Apps.Utils.ResponseData import ResponseData
 
 
 class ReseniaViewSet(ModelViewSet):
-    queryset = Resenia.objects.select_related('Reserva')
+    queryset = Resenia.objects.select_related('IdReserva')
     serializer_class = ReseniaSerializer
 
     def list(self, request):
-        queryset = Resenia.objects.select_related('Reserva').all()
+        queryset = Resenia.objects.select_related('IdReserva').all()
         serializer = ReseniaSerializer(queryset, many=True)
         data = ResponseData(
             Success=True,
@@ -57,10 +57,11 @@ class ReseniaViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk=int):
+    def update(self, request, pk=int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             loans = Resenia.objects.get(pk=pk)
-            serializer = ReseniaSerializer(loans, data=request.data)
+            serializer = ReseniaSerializer(loans, data=request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

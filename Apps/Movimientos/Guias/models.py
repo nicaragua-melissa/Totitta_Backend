@@ -1,4 +1,7 @@
 from django.db import models
+
+from Apps.Catalogo.Reserva.models import Reserva
+
 # Create your models here.
 
 Genero = [
@@ -19,6 +22,7 @@ class Guia(models.Model):
     Telefono = models.CharField(verbose_name='Telefono', max_length=20)
     Dirrecion = models.CharField(verbose_name='Direccion', max_length=200)
     is_Active = models.BooleanField(verbose_name='Activo', default=True)
+    id_Reserva = models.ForeignKey(Reserva, on_delete=models.CASCADE)
 
     class Meta:
         db_table = 'Guia'

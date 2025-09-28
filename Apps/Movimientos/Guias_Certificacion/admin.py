@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from Apps.Movimientos.Guia_Sertificacion.models import Guia_Sertificacion
+from Apps.Movimientos.Guias_Certificacion.models import Guia_Certificacion
 
 
 # Register your models here.
-@admin.register(Guia_Sertificacion)
+@admin.register(Guia_Certificacion)
 class Guia_SertificacionAdmin(admin.ModelAdmin):
     list_display = ('Id_Certificacion', 'Id_Guia')

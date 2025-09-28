@@ -51,7 +51,7 @@ class PersonaViewSet(ModelViewSet):
     def create(self, request):
         serializer = PersonaSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
-        Cedu = Persona.objects.filter(Cedu=serializer.validated_data['Identificacion']).exists()
+        Cedu = Persona.objects.filter(Identificacion=serializer.validated_data['Identificacion']).exists()
 
         if Cedu:
             data = ResponseData(
@@ -72,10 +72,11 @@ class PersonaViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk= int):
+    def update(self, request, pk=int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             person = Persona.objects.get(pk=pk)
-            serializer = PersonaSerializer(instance=person, data= request.data)
+            serializer = PersonaSerializer(person, data= request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

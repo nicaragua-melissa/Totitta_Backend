@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class GuiaConfig(AppConfig):
+class GuiasCertificacionConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Apps.Catalogo.Guia'
+    name = 'Apps.Movimientos.Guias_Certificacion'

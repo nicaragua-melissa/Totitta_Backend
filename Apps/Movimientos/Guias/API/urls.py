@@ -1,6 +1,6 @@
 from rest_framework.routers import DefaultRouter
 
-from Apps.Catalogo.Guia.API.GuiasAPI import GuiasViewSet
+from Apps.Movimientos.Guias.API.GuiasAPI import GuiasViewSet
 
 routerGuia = DefaultRouter()
 

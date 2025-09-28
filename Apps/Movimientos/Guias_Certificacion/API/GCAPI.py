@@ -2,17 +2,17 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from Apps.Movimientos.Guia_Sertificacion.API.SerializerGC import GCSerializer
-from Apps.Movimientos.Guia_Sertificacion.models import Guia_Sertificacion
+from Apps.Movimientos.Guias_Certificacion.API.SerializerGC import GCSerializer
+from Apps.Movimientos.Guias_Certificacion.models import Guia_Certificacion
 from Apps.Utils.ResponseData import ResponseData
 
 
 class GCViewSet(ModelViewSet):
-    queryset = Guia_Sertificacion.objects.select_related('Guia','certificacion')
+    queryset = Guia_Certificacion.objects.select_related('Guia','certificacion')
     serializer_class = GCSerializer
 
     def list(self, request):
-        queryset = Guia_Sertificacion.objects.select_related('Guia','certificacion').all()
+        queryset = Guia_Certificacion.objects.select_related('Guia','certificacion').all()
         serializer = GCSerializer(queryset, many=True)
         data = ResponseData(
             Success=True,
@@ -25,7 +25,7 @@ class GCViewSet(ModelViewSet):
 
     def retrieve(self, request, pk=int):
         try:
-            search = Guia_Sertificacion.objects.get(pk=pk)
+            search = Guia_Certificacion.objects.get(pk=pk)
             serializer = GCSerializer(search)
             data = ResponseData(
                 Success=True,
@@ -35,7 +35,7 @@ class GCViewSet(ModelViewSet):
             )
             return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-        except Guia_Sertificacion.DoesNotExist:
+        except Guia_Certificacion.DoesNotExist:
             data = ResponseData(
                 Success=False,
                 Status=status.HTTP_404_NOT_FOUND,
@@ -57,10 +57,11 @@ class GCViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk=int):
+    def update(self, request, pk=int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
-            loans = Guia_Sertificacion.objects.get(pk=pk)
-            serializer = GCSerializer(loans, data=request.data)
+            loans = Guia_Certificacion.objects.get(pk=pk)
+            serializer = GCSerializer(loans, data=request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
@@ -72,7 +73,7 @@ class GCViewSet(ModelViewSet):
             )
             return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-        except Guia_Sertificacion.DoesNotExist:
+        except Guia_Certificacion.DoesNotExist:
             data = ResponseData(
                 Success=False,
                 Status=status.HTTP_404_NOT_FOUND,
@@ -83,7 +84,7 @@ class GCViewSet(ModelViewSet):
 
     def destroy(self, request, pk: int):
         try:
-            cert = Guia_Sertificacion.objects.get(pk=pk)
+            cert = Guia_Certificacion.objects.get(pk=pk)
             cert.delete()  # elimina físicamente el registro
             data = ResponseData(
                 Success=True,
@@ -93,7 +94,7 @@ class GCViewSet(ModelViewSet):
             )
             return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-        except Guia_Sertificacion.DoesNotExist:
+        except Guia_Certificacion.DoesNotExist:
             data = ResponseData(
                 Success=False,
                 Status=status.HTTP_404_NOT_FOUND,

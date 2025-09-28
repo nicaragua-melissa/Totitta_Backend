@@ -20,11 +20,11 @@ from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 
 from Apps.Catalogo.Certificacion.API.urls import routerCertificacion
-from Apps.Catalogo.Guia.API.urls import routerGuia
+from Apps.Movimientos.Guias.API.urls import routerGuia
 from Apps.Catalogo.Persona.API.urls import routerPersona
 from Apps.Catalogo.Reserva.API.urls import routerReserva
 from Apps.Movimientos.Actividad.API.urls import routerActividad
-from Apps.Movimientos.Guia_Sertificacion.API.urls import routerGC
+from Apps.Movimientos.Guias_Certificacion.API.urls import routerGC
 from Apps.Movimientos.Reservacion.API.urls import routerReservacion
 from Apps.Movimientos.Reseña.API.urls import routerResenia
 from Seguridad.Usuario.Api.UsuariosApi import UserCreateView
@@ -43,6 +43,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('api/v1/register/', UserCreateView.as_view(), name='register'),
     path('api/Certificacion', include(routerCertificacion.urls)),
     path('api/Guia',include(routerGuia.urls)),

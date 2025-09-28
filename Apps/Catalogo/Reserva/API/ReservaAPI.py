@@ -57,10 +57,11 @@ class ReservaModelViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk= int):
+    def update(self, request, pk= int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             certific = Reserva.objects.get(pk=pk)
-            serializer = ReservaSerializer(instance=certific, data= request.data)
+            serializer = ReservaSerializer(instance=certific, data= request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 

@@ -7,4 +7,4 @@ from Apps.Catalogo.Persona.models import Persona
 @admin.register(Persona)
 class PersonaAdmin(admin.ModelAdmin):
     search_fields = ['Identificacion']
-    list_display = ['Identificacion', 'Turista', 'Nombre','Nombre2','Apellido1','Apellido2','Edad','Sexo']
+    list_display = ['Identificacion', 'Turista', 'Nombre','Nombre2','Apellido1','Apellido2','Edad','Sexo','is_Active']

@@ -48,7 +48,7 @@ class ActividadViewSet(ModelViewSet):
         serializer = ActividadSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        Even = Actividad.objects.filter(Even=serializer.validated_data['CodigoActividad']).exists()
+        Even = Actividad.objects.filter(CodigoActividad=serializer.validated_data['CodigoActividad']).exists()
         if Even:
             data = ResponseData(
                 Success=False,
@@ -67,10 +67,11 @@ class ActividadViewSet(ModelViewSet):
         )
         return Response(status=status.HTTP_200_OK, data=data.toResponse())
 
-    def update(self, request, pk=int):
+    def update(self, request, pk=int, **kwargs):
+        partial = kwargs.get('partial', False)
         try:
             loans = Actividad.objects.get(pk=pk)
-            serializer = ActividadSerializer(loans, data=request.data)
+            serializer = ActividadSerializer(loans, data=request.data, partial=partial)
             serializer.is_valid(raise_exception=True)
             serializer.save()
 
