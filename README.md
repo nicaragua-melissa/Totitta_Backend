@@ -7,22 +7,22 @@ y realizar reservas seguras desde cualquier dispositivo, promoviendo el turismo 
 ---
 ### Instalación y ejecución
 
-1. **Clona el repositorio**
+1. **Clona el repositorio:**
    git clone https://github.com/nicaragua-melissa/Totitta_Backend.git
 
-2. **Crea un entorno virtual**
+2. **Crea un entorno virtual:**
    python -m venv totitta
    
-3. **Activa el entorno virtual**  
+3. **Activa el entorno virtual:**  
    .\totitta\Scripts\activate (en la consola de Windows)
 
-4. **Instala dependencias**  
+4. **Instala dependencias:**  
    pip install -r requirements.txt
 
-5. **Aplica migraciones**  
+5. **Aplica migraciones:**  
    python manage.py migrate
 
-6. **Ejecuta el servidor**  
+6. **Ejecuta el servidor:**  
    python manage.py runserver
 
 Nota: Puedes revisar el /redoc para obtener todas las direcciones de las apis y poderlas consumir desde un software como Postman.
