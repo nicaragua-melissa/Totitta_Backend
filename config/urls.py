@@ -30,6 +30,7 @@ from Apps.Movimientos.Guias_Certificacion.API.urls import routerGC
 from Apps.Movimientos.Reservacion.API.urls import routerReservacion
 from Apps.Movimientos.Reseña.API.urls import routerResenia
 from Seguridad.Usuario.Api.UsuariosApi import UserCreateView
+from Seguridad.Usuario.Api.LoginApi import LoginApi
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -43,10 +44,12 @@ schema_view = get_schema_view(
    public=True,
 )
 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('api/v1/register/', UserCreateView.as_view(), name='register'),
+    path('api/Login/', LoginApi.as_view(), name='login'),
     path('api/Certificacion', include(routerCertificacion.urls)),
     path('api/Guia',include(routerGuia.urls)),
     path('api/Persona',include(routerPersona.urls)),
@@ -57,4 +60,5 @@ urlpatterns = [
     path('api/GuiasCertificados',include(routerGC.urls)),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+
 ]

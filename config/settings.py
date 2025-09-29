@@ -24,10 +24,11 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-9rm@x6n+%%5a-=(hvpj!578usans4zyorvxirn+s6d&3n98-zg'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ad4927e3a75a.ngrok-free.app', '127.0.0.1']
 
 
 # Application definition
@@ -68,10 +69,13 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5501",  # Puerto donde corre el frontend
-]
+# CORS_ALLOWED_ORIGINS = [
+#     "http://localhost:5500",  # Puerto donde corre el frontend
+# ]
 
+CORS_ALLOW_ALL_ORIGINS = True
+
+# CORS_ALLOW_ALL_ORIGINS = True
 
 ROOT_URLCONF = 'config.urls'
 
